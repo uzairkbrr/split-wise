@@ -13,11 +13,11 @@ A clean, modern web application to help you track shared expenses and manage deb
 
 ## Live Preview
 
-Check out the live version here: [Expense Manager Demo](https://splitwisegroup.netlify.app/)
+Check out the live version here: [Expense Manager Demo](https://teramerahesaab.netlify.app/)
 
 ## How to Use
 
-1.  **Open the Dashboard**: Start by visiting the [Live Preview](https://splitwisegroup.netlify.app/) or opening `index.html` locally.
+1.  **Open the Dashboard**: Start by visiting the [Live Preview](https://teramerahesaab.netlify.app/) or opening `index.html` locally.
 2.  **Add People**: Click "Add Person" to register everyone involved.
 3.  **Add Expense**: Click "Add Expense", enter the details, and let the app handle the math.
 4.  **Settle Up**: Use the dashboard to see who owes whom.

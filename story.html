@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Story - Expense Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .guide-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .story-section {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .story-section h2 {
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .story-section p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .emoji-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="guide-container">
+        <!-- New Header Structure -->
+        <header class="dashboard-header">
+            <div class="header-left" style="width: 100%; justify-content: space-between;">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1 class="dashboard-header_title" style="font-size: 1.5rem;">Tera Mera Hisaab</h1>
+                </a>
+                <div class="nav-links-container">
+                    <a href="how-to-use.html" class="nav-link">How it works</a>
+                </div>
+            </div>
+        </header>
+
+        <header class="guide-header">
+            <h1 style="font-size: 2.5rem; color: var(--primary-color);">The "Why" Behind This Chaos</h1>
+            <p>A short tale of empty wallets and confusing math.</p>
+        </header>
+
+        <section class="story-section">
+            <h2><span class="emoji-icon">💸</span> The Designated Banker</h2>
+            <p>Back in university, I somehow became the unofficial "Cashier" for <b>Arsalan</b>,
+                <b>Ghani</b>, <b>Hamza Tahir</b>, <b>Saad kabeer</b>, and <b>Sana
+                    ullah</b>. Whenever we went out for chai or food, everyone would look at me like, <em>"Uzair
+                    bhai, pay kar do, baad mein le lena"</em> (Pay now, take later). My wallet was basically public
+                property.
+            </p>
+            <p>Whether it was Late night chai at <strong>Food street</strong> or just Biryani at <strong>Abid Bhai's
+                    Dhabba</strong>, I was always the one fronting the cash. "Don't worry, we'll Splitwise it," they
+                said. But we never did.</p>
+        </section>
+
+        <section class="story-section">
+            <h2><span class="emoji-icon">🤯</span> The Mental Math Gymnastics</h2>
+            <p>The real nightmare wasn't spending the money, but remembering who owed what. I'd come home and stare at
+                the ceiling calculating: "Okay, Ghani had the chai but <strong>not the</strong> paratha, Arsalan
+                <strong>ate half</strong> of Sana ullah's
+                fries, and I think I just paid for everyone's breathing tax?"
+            </p>
+            <p>Trying to chase them down for 50 PKR was a <strong>mission impossible</strong>. I was losing money faster
+                than I was
+                losing my sanity. I needed a way to track this chaos without needing a degree in advanced accounting.
+            </p>
+        </section>
+
+        <section class="story-section">
+            <h2><span class="emoji-icon">💡</span> The Solution (And My Two Cents)</h2>
+            <p>So, I built this. A simple place to dump all those numbers so I could stop holding grudges over 100 PKR.
+            </p>
+            <p>From my side: I realized that money complicates friendships only when you assume people remember. They
+                don't. <strong>Arsalan</strong> forgets the second he <strong>finishes that burger</strong>. This app
+                remembers for them. Now, you can
+                look them in the eye and say, "Check the dashboard," with zero guilt. Enjoy your financial freedom! 😉
+            </p>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="button primary-button" style="text-decoration: none;">Awesome, take me back!</a>
+        </div>
+    </div>
+
+    <script src="navbar.js"></script>
+</body>
+
+</html>

@@ -80,10 +80,20 @@
 <body>
 
     <div class="guide-container">
-        <a href="index.html" class="back-link">← Back to Dashboard</a>
+        <!-- New Header Structure -->
+        <header class="dashboard-header">
+            <div class="header-left" style="width: 100%; justify-content: space-between;">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1 class="dashboard-header_title" style="font-size: 1.5rem;">Tera Mera Hisaab</h1>
+                </a>
+                <div class="nav-links-container">
+                    <a href="story.html" class="nav-link">The Story</a>
+                </div>
+            </div>
+        </header>
 
         <header class="guide-header">
-            <h1>How to Use</h1>
+            <h1 style="font-size: 2.5rem; color: var(--primary-color);">How to Use</h1>
             <p>Master your expense management in 3 simple steps.</p>
         </header>
 
@@ -101,17 +111,55 @@
         </section>
 
         <section class="step">
-            <h2><span class="step-number">3</span> Track & Clear</h2>
-            <p>The dashboard updates in real-time. Positive numbers (green) mean the person is owed money. Negative
-                numbers (red) mean they owe money. Click on any transaction in the list to see more details. Use the
-                <strong>Clear Record</strong> button to wipe all data and start fresh.</p>
+            <h2><span class="step-number">3</span> Settle Up Benefits</h2>
+            <p>When someone pays you back (or you pay them), click the <strong>Settle Up</strong> button. Select who is
+                paying whom and the amount. This records a "Settlement" transaction and adjusts the balances
+                accordingly, helping you reach zero!</p>
+        </section>
+
+        <section class="step">
+            <h2><span class="step-number">4</span> Export Data</h2>
+            <p>Want a hard copy of your finances? Click the <strong>Export Data</strong> button to generate a
+                <strong>Detailed PDF Report</strong> containing visual graphs, math explanations, and a complete
+                transaction history.</p>
+            <p
+                style="margin-top: 10px; background: #eff6ff; padding: 10px; border-radius: 8px; font-size: 0.9rem; color: #1e40af;">
+                <strong>💡 Pro Tip:</strong> The report opens in a new window. Simply select <strong>"Save as
+                    PDF"</strong> in the print options to download it!</p>
+        </section>
+
+        <section class="step">
+            <h2><span class="step-number">5</span> Clear Record</h2>
+            <p><strong style="color: #ef4444;">Warning:</strong> The <strong>Clear Record</strong> button permanently
+                deletes all users,
+                expenses, and transaction history. Use this only when you want to wipe everything and start a fresh
+                ledger.</p>
+        </section>
+
+        <section class="step" style="border-left: 4px solid var(--primary-color);">
+            <h2>💡 The Logic Behind the Math</h2>
+            <p>How does it calculate everything? It uses a simple "Split Equitably" algorithm:</p>
+            <ul
+                style="list-style-type: disc; margin-left: 20px; margin-top: 10px; color: var(--text-muted); line-height: 1.6;">
+                <li><strong>Total Amount / N:</strong> Every expense is divided by the number of people (N) involved.
+                </li>
+                <li><strong>Payer Credit:</strong> The person who paid gets a POSITIVE credit for the full amount.</li>
+                <li><strong>Consumer Debit:</strong> Everyone involved (including the payer!) gets a NEGATIVE debit for
+                    their share.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Example:</strong> You pay 300 for 3 people (A, B, C).<br>
+                You get +300. Then A, B, and C each get -100.<br>
+                <strong>Your Net:</strong> +200 (Because you paid 300 but consumed 100).<br>
+                <strong>Others Net:</strong> -100 each (They owe you).
+            </p>
         </section>
 
         <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" class="button primary-button">Go to Dashboard</a>
+            <a href="index.html" class="button primary-button" style="text-decoration: none;">Go to Dashboard</a>
         </div>
     </div>
 
+    <script src="navbar.js"></script>
 </body>
 
 </html>
