@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use - Expense Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .guide-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .step {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .step h2 {
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="guide-container">
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+
+        <header class="guide-header">
+            <h1>How to Use</h1>
+            <p>Master your expense management in 3 simple steps.</p>
+        </header>
+
+        <section class="step">
+            <h2><span class="step-number">1</span> Add People</h2>
+            <p>Start by adding the people involved. Click the <strong>Add Person</strong> button on the dashboard. Enter
+                their name and they will be added to your tracking list initially with a balance of 0.00.</p>
+        </section>
+
+        <section class="step">
+            <h2><span class="step-number">2</span> Add Expenses</h2>
+            <p>Click the <strong>Add Expense</strong> button. Enter the total amount, how many people are splitting it,
+                who paid, and select the names of the people involved. The app will automatically calculate who owes
+                what.</p>
+        </section>
+
+        <section class="step">
+            <h2><span class="step-number">3</span> Track & Clear</h2>
+            <p>The dashboard updates in real-time. Positive numbers (green) mean the person is owed money. Negative
+                numbers (red) mean they owe money. Click on any transaction in the list to see more details. Use the
+                <strong>Clear Record</strong> button to wipe all data and start fresh.</p>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="button primary-button">Go to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

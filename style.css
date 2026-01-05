@@ -1,19 +1,53 @@
+/* CSS Variables & Reset */
+:root {
+    --primary-color: #4f46e5;
+    /* Indigo 600 */
+    --primary-hover: #4338ca;
+    /* Indigo 700 */
+    --secondary-color: #ef4444;
+    /* Red 500 */
+    --secondary-hover: #dc2626;
+    /* Red 600 */
+    --success-color: #10b981;
+    /* Emerald 500 */
+    --bg-color: #f3f4f6;
+    /* Gray 100 */
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    /* Gray 800 */
+    --text-muted: #6b7280;
+    /* Gray 500 */
+    --border-color: #e5e7eb;
+    /* Gray 200 */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 0.5rem;
+    --transition: all 0.2s ease-in-out;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Utilities */
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .flex {
     display: flex;
-}
-
-.line-height {
-    line-height: 30px;
 }
 
 .cursor-pointer {
@@ -24,255 +58,328 @@
     color: #fff;
 }
 
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
 .primary-button {
-    background-color: #007bff;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
 }
 
 .secondary-button {
- background-color: #ec3636;
+    background-color: var(--secondary-color);
+    color: white;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    flex-direction: column;
-    min-height: 100vh;
+.secondary-button:hover {
+    background-color: var(--secondary-hover);
 }
 
+/* Layout */
 .dashboard-container {
     flex: 1;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.dashboard {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
 }
 
+/* Header */
 .dashboard-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    background-color: var(--card-bg);
+    padding: 1.25rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
 }
 
-.dashboard-footer {
-    justify-content: center;
-    max-width: 712px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
+.header-left {
+    display: flex;
+    align-items: center;
 }
 
-.dashboard-header_title{
-    margin: 0;
+.dashboard-header_title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
 }
 
-.button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
+.dashboard-buttons {
+    display: flex;
+    gap: 10px;
 }
 
-.dashboard-buttons button:hover {
-    background-color: #0056b3;
+/* Overview Section */
+.dashboard-overview {
+    margin-bottom: 2rem;
 }
 
-.dashboard-overview,
-.dashboard-expenses {
-    margin-top: 20px;
-    padding-inline: 12px;
-}
-
-.dashboard-overview h2 {
-    margin-bottom: 10px;
+.overview-title,
+.expenses-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
 }
 
 .overview-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
 .card {
-    background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
     text-align: center;
-    max-width: 200px;
-    width: 100%;
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
 .card h3 {
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
-.expenses-container {
-    margin-top: 20px;
+.person-account-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
-.expenses-title {
-    margin-bottom: 10px;
-}
-
+/* Expenses Section */
 .expenses-details {
     list-style: none;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .expenses-details li {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    background-color: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
+.expenses-details li:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.description-container {
+    font-weight: 600;
+    color: var(--text-main);
+    flex: 2;
+}
+
+.amount-per-person {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.payer {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    flex: 1;
+    text-align: right;
+}
+
+/* Modals */
 .modal {
-    position: fixed; 
-    z-index: 1; 
+    position: fixed;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.add-expense h2 {
-    margin-bottom: 20px;
-}
-
-.add-expense-form .select-payer {
+    background-color: var(--card-bg);
+    margin: 0 20px;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     width: 100%;
-    padding: 10px 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    max-width: 450px;
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .close-btn,
 .transaction-close-button,
 .new-person-close-button,
 .add-expense__close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+    cursor: pointer;
+    line-height: 1;
 }
 
 .close-btn:hover,
-.close-btn:focus,
 .transaction-close-button:hover,
-.transaction-close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.new-person-close-button:hover,
+.add-expense__close-button:hover {
+    color: var(--secondary-color);
 }
 
-.add-expense-form label {
+.modal h2,
+.transaction-heading {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
-.add-expense-form input {
+form input,
+form select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
 }
 
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.add-Person-submit-button,
 .add-Expense-button {
     width: 100%;
-    padding: 10px;
+    padding: 0.75rem;
+    background-color: var(--success-color);
+    color: white;
     border: none;
-    border-radius: 3px;
-    background-color: #28a745;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
+.add-Person-submit-button:hover,
 .add-Expense-button:hover {
-    background-color: #218838;
+    background-color: #059669;
+    /* Emerald 600 */
 }
 
-.add-expense__close-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+/* Transaction Details Specifics */
+.line-height {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
-/* New Person Modal styling*/
-.new-person-modal {
-    position: relative;
+/* Footer */
+.dashboard-footer {
+    margin-top: auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
 }
 
-.new-person-modal h2 {
-    margin-bottom: 20px;
-}
-
-.new-person-modal input {
-    padding: 5px 20px 5px 3px;
-}
-
-.new-person-close-button {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-}
-
-.add-Person-submit-button {
-    padding: 7px 10px;
-    border: none;
-    border-radius: 3px;
-    background-color: #007bff;
-}
-
-.transaction-heading {
-    margin-bottom: 20px;
-}
-
-@media (max-width: 500px) {
-    .expenses li,
-    header {
+/* Responsive */
+@media (max-width: 600px) {
+    .dashboard-header {
         flex-direction: column;
-        gap: 20px;
+        gap: 1rem;
         text-align: center;
     }
 
-    .new-person-modal input{
+    .dashboard-buttons {
         width: 100%;
-        margin-top: 8px;
+        justify-content: center;
     }
 
-    .add-Person-submit-button {
-        margin-top: 16px;
-        width: 100%;
-    }
-}
-
-
-@media (max-width: 460px) {
-    .card {
-        width: 100%;
-        max-width: 500px;
+    .expenses-details li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
     }
 
-    header button {
-        margin-bottom: 10px;
-        width: 100%;
+    .payer {
+        text-align: left;
+        margin-top: 0.25rem;
     }
 }

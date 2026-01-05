@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Manager - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="flex">
   <div class="dashboard">
 
     <header class="dashboard-header">
-      <h1 class="dashboard-header_title">Dashboard</h1>
+      <div class="header-left">
+        <h1 class="dashboard-header_title">Dashboard</h1>
+        <a href="how-to-use.html" class="nav-link" style="margin-left: 15px; text-decoration: none; color: var(--primary-color); font-weight: 500; font-size: 0.9rem;">How to Use</a>
+      </div>
 
       <div class="dashboard-buttons">
           <button id="dashboard-buttons_add-person" class="button dashboard-buttons_add-person primary-button cursor-pointer white-color">Add Person</button>
