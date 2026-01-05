@@ -278,6 +278,18 @@ personElements.closeButton.addEventListener("click", hidePersonModal);
 
 transactionElements.closeButton.addEventListener("click", hideTransactionModal);
 
+window.addEventListener("click", function(event) {
+    if (event.target === addExpenseElements.modal) {
+        hideExpenseModal();
+    }
+    if (event.target === personElements.modal) {
+        hidePersonModal();
+    }
+    if (event.target === transactionElements.modal) {
+        hideTransactionModal();
+    }
+});
+
 clearLocalStorage.addEventListener('click', function(e) {
 	e.preventDefault();
 	localStorage.clear();

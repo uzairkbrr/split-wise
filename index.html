@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Manager - Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Manager - Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="flex">
   <div class="dashboard">
 
     <header class="dashboard-header">
       <div class="header-left">
         <h1 class="dashboard-header_title">Dashboard</h1>
-        <a href="how-to-use.html" class="nav-link" style="margin-left: 15px; text-decoration: none; color: var(--primary-color); font-weight: 500; font-size: 0.9rem;">How to Use</a>
+        <a href="how-to-use.html" class="nav-link">How to Use</a>
       </div>
 
       <div class="dashboard-buttons">
-          <button id="dashboard-buttons_add-person" class="button dashboard-buttons_add-person primary-button cursor-pointer white-color">Add Person</button>
-          <button id="dashboard-buttons_add-expense" class="button dashboard-buttons_add-expense primary-button cursor-pointer white-color">Add Expense</button>
+        <button id="dashboard-buttons_add-person"
+          class="button dashboard-buttons_add-person primary-button cursor-pointer white-color">Add Person</button>
+        <button id="dashboard-buttons_add-expense"
+          class="button dashboard-buttons_add-expense primary-button cursor-pointer white-color">Add Expense</button>
       </div>
     </header>
 
@@ -28,62 +32,73 @@
       <h2 class="overview-title">Users:</h2>
 
       <div class="overview-cards users-cards">
-          <!-- Users will be displayed here in UI ( using JS ) -->
+        <!-- Users will be displayed here in UI ( using JS ) -->
       </div>
     </section>
-    
+
     <section class="dashboard-expenses expenses-container">
       <h2 class="expenses-title">Recent Expenses:</h2>
-      
+
       <ul class="expenses-details">
-          <!-- Expenses will be displayed here in UI ( using JS ) -->
+        <!-- Expenses will be displayed here in UI ( using JS ) -->
       </ul>
     </section>
+
+    <footer class="dashboard-footer flex" style="flex-direction: column; gap: 1rem;">
+      <div class="footer-button-conatiner">
+        <button id="clear-record-button" class="button secondary-button cursor-pointer white-color">Clear
+          Record</button>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.875rem;">Built with 🫶 by <a
+          href="https://www.linkedin.com/in/uzairkbrr" target="_blank"
+          style="color: var(--primary-color); font-weight: 700; text-decoration: none;">Uzair</a></p>
+    </footer>
   </div>
 
-    <!-- Add Person Modal -->
-    <div class="modal hide" id="add-person-modal">
-      <div class="modal-content new-person-modal">
-        <span class="new-person-close-button cursor-pointer">&times;</span>
+  <!-- Add Person Modal -->
+  <div class="modal hide" id="add-person-modal">
+    <div class="modal-content new-person-modal">
+      <span class="new-person-close-button cursor-pointer">&times;</span>
 
-        <h2>Add Person</h2>
+      <h2>Add Person</h2>
 
-        <form id="add-person-form">
-            <label for="person-name">Name:</label>
-            <input type="text" id="person-name" name="person-name" >
-            <button type="submit" class="add-Person-submit-button cursor-pointer white-color">Add Person</button>
-        </form>
-      </div>
+      <form id="add-person-form">
+        <label for="person-name">Name:</label>
+        <input type="text" id="person-name" name="person-name">
+        <button type="submit" class="add-Person-submit-button cursor-pointer white-color">Add Person</button>
+      </form>
     </div>
+  </div>
 
-    <!-- Add Expense Modal -->
-    <div class="modal add-expense hide" id="add-expense-modal">
-      <div class="modal-content">
+  <!-- Add Expense Modal -->
+  <div class="modal add-expense hide" id="add-expense-modal">
+    <div class="modal-content">
 
-        <span class="add-expense__close-button cursor-pointer" id="add-expense__close-button">&times;</span>
+      <span class="add-expense__close-button cursor-pointer" id="add-expense__close-button">&times;</span>
 
-        <h2>Add Expense</h2>
+      <h2>Add Expense</h2>
 
-        <form id="add-expense-form" class="add-expense-form">
-          <label for="amount">Amount:</label>
-          <input type="number" id="amount" name="amount" required>
-          
-          <label for="num-people">Number of Persons:</label>
-          <input type="number" id="num-people" name="num-people" required>
-          
-          <label for="payer">Who Paid:</label>
-          <select name="payer" id="payer" class="select-payer" required></select>
+      <form id="add-expense-form" class="add-expense-form">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
 
-          <label for="persons">Names of Persons:</label>
-          <input type="text" name="persons" id="persons-in-expenses" placeholder="Enter persons, separated by commas" required>
+        <label for="num-people">Number of Persons:</label>
+        <input type="number" id="num-people" name="num-people" required>
 
-          <label for="description">Description:</label>
-          <input type="text" name="description" id="description-input" required>
-          
-          <button type="submit" class="add-Expense-button cursor-pointer white-color">Add Expense</button>
-        </form>
-      </div>
+        <label for="payer">Who Paid:</label>
+        <select name="payer" id="payer" class="select-payer" required></select>
+
+        <label for="persons">Names of Persons:</label>
+        <input type="text" name="persons" id="persons-in-expenses" placeholder="Enter persons, separated by commas"
+          required>
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description-input" required>
+
+        <button type="submit" class="add-Expense-button cursor-pointer white-color">Add Expense</button>
+      </form>
     </div>
+  </div>
 
   <!-- Transaction Details Modal -->
   <div class="modal hide" id="transaction-details-modal">
@@ -102,12 +117,7 @@
     </div>
   </div>
 
-  <footer class="dashboard-footer flex">
-    <div class="footer-button-conatiner">
-      <button id="clear-record-button" class="button secondary-button cursor-pointer white-color">Clear Record</button>
-    </div>
-  </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
